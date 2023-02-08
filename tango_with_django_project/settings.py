@@ -29,7 +29,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'diq0uf+!blnmo69=bfxh@bfe2c&ddw7ohiiof77-&c(1pbuzv5'
 
-
+SESSION_ENGINE="django.contrib.sessions.backends.signed_cookies"
 
 #media variables
 MEDIA_ROOT = MEDIA_DIR
@@ -86,6 +86,8 @@ TEMPLATES = [
 STATICFILES_DIRS = [STATIC_DIR, ]
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE= True
 
 
 # Database
