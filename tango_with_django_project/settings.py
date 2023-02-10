@@ -53,7 +53,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rango',
 ]
-
+MIDDLEWARE_CLASSES = [
+    "django.contrib.sessions.middleware.SessionMiddleware"
+]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

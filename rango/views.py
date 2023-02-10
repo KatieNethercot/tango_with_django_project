@@ -14,6 +14,8 @@ from datetime import datetime
 
 
 def index(request):
+   # request.session.set_test_cookie()
+
     category_list = Category.objects.order_by('-likes')[:5]
     pages_list = Page.objects.order_by('-views')[:5]
 
@@ -199,10 +201,12 @@ def visitor_cookie_handler(request):
 # If it's been more than a day since the last visit...
     if (datetime.now() - last_visit_time).days > 0:
         visits = visits + 1
+        print("visits")
 # Update the last visit cookie now that we have updated the count
         request.session['last_visit'] = str(datetime.now())
     else:
 # Set the last visit cookie
+        print("else ")
         request.session['last_visit'] = last_visit_cookie
 # Update/set the visits cookie
     request.session['visits'] = visits
